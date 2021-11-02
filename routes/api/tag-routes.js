@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
   try{
       const tagData = await Tag.findByPk(req.params.id, {include: [{model: Product, through: ProductTag}]});
       if(!tagData){
-        res.status(404).json({ message: "No item by that tag."});
+        res.status(404).json({ message: "No Tag by that ID."});
         return;
       };
       res.status(200).json(tagData);
@@ -44,7 +44,7 @@ router.put('/:id', async(req, res) => {
   try{
     const tagData = await Tag.update(req.body, {where: {id:req.params.id}});
     if (!tagData){
-      res.status(404).json({message: "No item with that Tag."})
+      res.status(404).json({message: "No Tag by that ID."})
       return;
     }
     res.status(200).json(tagData);
@@ -58,7 +58,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const tagData = await Tag.destroy({where:{id: req.params.id}})
     if (!tagData){
-      res.status(404).json({message: "No item by that tag."});
+      res.status(404).json({message: "No Tag by that ID."});
       return;
     }
     res.status(200).json(tagData);
