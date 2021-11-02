@@ -1,1 +1,16 @@
 # orm_backend
+
+## Description
+This is the backend for a store database to store products with there catagories and tags for the product. It is made useing mysql and sequelize to perform the database searches.
+
+## Table of Conternts
+<ol>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#preview">preview</a></li>
+</ol>
+    
+## Usage
+To use this program you will have to download the program files from github to your local computer. From there you will need to install the apropreate npm packages as well as create and seed the database. In order to do this start with opening a termenal in the orm_backend folder. You will need to run the command `npm i` to install all of the npm packages. Then you will need to get into mysql. In the same termenal run the command `mysql -u example -p` replaceing "example" with your local username. The termenal will the prompt you for the password for your local user. Once you enter this you will need to run the command `source db/schema.sql` to create the database this program uses. After that you can enter `quit` to get out of the mysql interface. Now to seed the database you will need to run `node seeds/index.js` or you can use your own data as long as it is formated for this database. I have included base api calls to interact with the database but you can always create or change the calls. As well this is only for the use of backend information management with this database. You will need to create a frontend aplication to display the data.
+
+## Preview
+![Alt text](https://github.com/nealsmithg/employee_tracker/blob/main/assets/preview.webm)
